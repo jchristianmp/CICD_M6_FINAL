@@ -1,11 +1,16 @@
-name: CI
+name: CI-CD
 
 on:
   push:
     branches:
       - main
+env:
+      IMAGE_NAME: fastapi
+      PROJECT_ID: ${{secrets.GOOGLE_PROJECT}}
+      SERVICE_ACCOUNT_KEY: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+
 jobs:
-  test:
+  CI:
     runs-on: ubuntu-latest
     
     steps:
@@ -30,3 +35,15 @@ jobs:
           flake8 src/classes/classes.py
           flake8 src/configurations/config.py
           flake8 src/Input/preprocessors.py
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: code checkout
+        uses: actions/checkout@v2
+    
+      - name: prueba
+        run: |
+          echo $PROJECT_ID
+
