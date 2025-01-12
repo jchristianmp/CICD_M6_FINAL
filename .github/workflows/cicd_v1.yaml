@@ -48,10 +48,10 @@ jobs:
       - name: build and push the docker image
         run: |
           gcloud auth configure-docker us-central1-docker.pkg.dev
-          docker build -t us-central1-docker.pkg.dev/$GOOGLE_PROJECT/$REPOSITORY_NAME/$IMAGE_NAME:latest .
-          docker push us-central1-docker.pkg.dev/$GOOGLE_PROJECT/$REPOSITORY_NAME/$IMAGE_NAME:latest
+          docker build -t us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY_NAME/$IMAGE_NAME:latest .
+          docker push us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY_NAME/$IMAGE_NAME:latest
       
       - name: deploy to cloud run
         run: |
-          gcloud run deploy $SERVICE_NAME --image us-central1-docker.pkg.dev/$GOOGLE_PROJECT/$REPOSITORY_NAME/$IMAGE_NAME --region=us-central1 --memory 2048M --timeout=600 --allow-unauthenticated
+          gcloud run deploy $SERVICE_NAME --image us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY_NAME/$IMAGE_NAME --region=us-central1 --memory 2048M --timeout=600 --allow-unauthenticated
       
