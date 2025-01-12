@@ -4,7 +4,6 @@ import datetime
 TEMPORAL_VARS = ['year']
 REF_VAR = datetime.datetime.now().year
 
-
 # Variables para tranformaciion yeo 
 NUMERICALS_YEO_VARS = ['running',
                        'motor_volume',
