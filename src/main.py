@@ -49,7 +49,7 @@ st.sidebar.markdown("""<h1 style='text-align: center;
                     color: lightgrey;'>MLOps 9na Edición</h1>""",
                     unsafe_allow_html=True)
 st.sidebar.markdown("""<h2 style='text-align: center;
-                    color: lightgrey;'>Proyecto Final <br/> Módulo 2</h2>""",
+                    color: lightgrey;'>Proyecto Final <br/> Módulo 6</h2>""",
                     unsafe_allow_html=True)
 # st.sidebar.write("MLOps 9va Edición")
 
